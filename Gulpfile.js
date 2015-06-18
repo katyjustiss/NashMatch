@@ -38,10 +38,10 @@ gulp.task('clean', function () {
    $.del('public')
 })
 
-///////////////COPY////////////////// trying to copy CNAME
+///////////////COPY////////////////// trying to copy CNAME. May need to add up top
 // gulp.task('copy', function () {
 //   gulp.src(['/src/CNAME'])
-//   .pipe($.copy('./public/'))
+//   .pipe(gulp.dest('./public/'))
 // });
 
 /////////////DEPLOY/////////////////
