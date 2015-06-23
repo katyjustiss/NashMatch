@@ -15,9 +15,13 @@
     "tests"
   ],
   "dependencies": {
-    "bootstrap": "~3.3.5",
     "angular": "~1.4.1",
     "jQuery": "~2.1.4",
-    "firebase": "~2.2.7"
+    "firebase": "~2.2.7",
+    "angular-route": "~1.4.1",
+    "bootstrap": "~3.3.4",
+    "angular-google-maps": "~2.1.5",
+    "lodash": "~3.9.3",
+    "angularfire": "~1.1.1"
   }
 }
