@@ -1,0 +1,16 @@
+.jumbotron.center-content
+  h1 Possible Opponents
+
+  a(href='#/matches')
+    h3 My Matches
+
+.all-members
+  h2 All Members
+  .playerContainer
+    .newPlayer(ng-repeat="player in player.people")
+      a(href="#/people/{{id}}")
+        img.picture.thumbnail(ng-src="{{player.photo}}")
+        h5 {{player.name}}
+        p {{player.rating}}
+        p {{player.time}}
+

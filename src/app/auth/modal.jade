@@ -1,0 +1,30 @@
+.modal.fade#modal
+  .modal-dialog
+    .modal-content
+      .modal-header
+        button.close(data-dismiss="modal")
+          span &times;
+        h2 Create Profile
+      .modal-body
+        form(name="profileForm")
+           .form-group
+            label.control-label Email
+            input.form-control(type="email", placeholder="andre@agassi.com", ng-model="auth.hidden.email", required)
+          .form-group
+            label.control-label Name
+            input.form-control(type="text", placeholder="Andre", ng-model="auth.person.name", required)
+          .form-group
+            label.control-label National Tennis Rating Level
+            input.form-control(name="a", type="text", placeholder="3.5", ng-model="auth.person.rating", required)
+          .form-group
+            label.control-label Best Time to Play
+            input.form-control(type="text", placeholder="after 5PM", ng-model="auth.person.time", required)
+          .form-group
+            label.control-label Photo URL
+            input.form-control(type="url", placeholder="http://google.com/img.jpg", ng-model="auth.person.photo", required)
+          .form-group
+            label.control-label Password
+            input.form-control(type="password", placeholder="Enter password", ng-model="auth.hidden.password", required)
+      .modal-footer
+        button.btn.btn-danger(ng-click="auth.createUser()") Save
+        button.btn.btn-default(data-dismiss="modal") Cancel

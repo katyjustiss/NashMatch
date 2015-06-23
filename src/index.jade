@@ -1,0 +1,41 @@
+doctype html
+html(lang="en", ng-app="NashMatch")
+  head
+    meta(charset="utf-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1")
+    title Tennis NashMatch
+    link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css")
+    //- link(rel="stylesheet", href="/lib/build.css")
+    link(rel="stylesheet", href="/app/main.css")
+    link(href='http://fonts.googleapis.com/css?family=Montserrat:400,700', rel='stylesheet', type='text/css')
+    link(href='http://fonts.googleapis.com/css?family=Domine', rel='stylesheet', type='text/css')
+  body
+    .container
+      nav.navbar
+        ul.nav.navbar-nav
+          a.navbar-brand(href='#') NashMatch
+          li: a(href='/#/players') Players
+          li(ng-show="auth"): a(href='/#/profile') Profile
+          li(ng-hide="auth"): a(href='/#/login') Login
+          li(ng-show="auth"): a(href='/#/logout') Logout
+    .app(ng-view)
+
+  script(src="lib/build.js")
+  script(src="app/main.module.js")
+  script(src="app/main.constants.js")
+
+  script(src="app/map/static.config.js")
+  script(src="app/map/map.controller.js")
+  script(src="app/map/map.factory.js")
+
+  script(src="app/auth/auth.controller.js")
+  script(src="app/auth/logout.controller.js")
+  script(src="app/auth/auth.config.js")
+
+  script(src="app/players/people.factory.js")
+  script(src="app/players/players.config.js")
+  script(src="app/players/players.controller.js")
+
+
+

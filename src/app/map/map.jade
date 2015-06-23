@@ -1,0 +1,8 @@
+.landing
+  h1 Nashville Tennis Courts
+  .map#map-canvas(ng-controller="MapCtrl")
+    ui-gmap-google-map(center="map.center" options="options" zoom="map.zoom" fit="true")
+      ui-gmap-markers(models="tennisMarkers" idkey="id" coords="'self'" icon="'icon'")
+
+
+

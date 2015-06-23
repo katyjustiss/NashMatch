@@ -1,0 +1,14 @@
+.login-form
+  h1 Login
+
+  form(name="loginForm" novalidate)
+    .form-group
+      label.control-label Email:
+      input.form-control(type="email", ng-model="auth.email")
+    .form-group
+      label.control-label Password:
+      input.form-control(type="password", ng-model="auth.password")
+    button.btn.btn-info(ng-click="auth.login(auth.email, auth.password)") Login
+    button.btn.btn-primary(ng-click="auth.onModalLoad()") Register
+    button.btn.btn-danger Change Password
+    div(ng-include="'app/auth/modal.html'")
