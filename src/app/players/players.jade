@@ -7,11 +7,11 @@
 
 .all-members
   .player_container
-    .new_player(ng-repeat="player in player.people")
-        img.picture.thumbnail(ng-src="{{player.photo}}")
-        p Name: {{player.name}}
-        p NTRP rating: {{player.rating}}
-        p Best time: {{player.time}}
+    .new_player(ng-repeat="(id, person) in player.people | objToArr | orderBy:'name' | filter:query")
+      a(href="#/people/{{person._id}}")
+        img.picture.thumbnail(ng-src="{{person.photo}}")
+        p {{person.name}}
+
 
 
 

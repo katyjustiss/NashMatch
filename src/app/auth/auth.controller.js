@@ -1,7 +1,7 @@
 angular
   .module('NashMatch')
 
-  .controller('AuthCtrl', function($rootScope, $scope, $location, FIRE_URL, Profile) {
+  .controller('AuthCtrl', function($rootScope, $scope, $location, FIRE_URL, People) {
     var main = this;
     var fb = new Firebase(FIRE_URL)
 
@@ -21,7 +21,7 @@ angular
       });
     }; //end of login
 
-    main.createUser = function(email, password) {
+    main.createUser = function() {
       fb.createUser({
         email: main.hidden.email,
         password: main.hidden.password
@@ -29,8 +29,8 @@ angular
         if(err){
           console.log('Firebase err:'+err);
         }else{
-          Profile.create(main.person, userData.uid, function(res){
-            main.login(res.hidden.email, res.hidden.password);
+          People.create(main.person, userData.uid, function(){
+            main.login(main.hidden.email, main.hidden.password);
           })
         }
       }); //end of fb createUser

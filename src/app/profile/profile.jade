@@ -1,0 +1,13 @@
+.profile
+  .profile-main
+    img.picture(ng-src="{{profile.person.photo}}")
+    button.edit.btn.btn-danger(ng-click="profile.editModalLoad()") Edit Profile
+  .info
+    h1 {{profile.person.name}}
+    p Best time to play: {{profile.person.time}}
+    p NTRP rating: {{profile.person.rating}}
+    p Best time: {{profile.person.time}}
+    p Area Preference: {{profile.person.area}}
+    p Type of play: {{profile.person.play}}
+
+div(ng-include="'app/profile/editmodal.html'")

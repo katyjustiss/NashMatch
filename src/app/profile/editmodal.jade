@@ -1,0 +1,30 @@
+.modal.fade#modal
+  .modal-dialog
+    .modal-content
+      .modal-header
+        button.close(data-dismiss="modal")
+          span &times;
+        h2 Edit Profile Information
+      .modal-body
+        form(name="profileForm")
+          .form-group
+            label.control-label Name
+            input.form-control(type="text", ng-model="profile.person.name", required)
+          .form-group
+            label.control-label National Tennis Rating Level
+            input.form-control(name="a", type="text", placeholder="3.5", ng-model="profile.person.rating", required)
+          .form-group
+            label.control-label Best Time to Play
+            input.form-control(type="text", placeholder="after 5PM", ng-model="profile.person.time", required)
+          .form-group
+            label.control-label Court Preference
+            input.form-control(type="text", placeholder="Green Hills area", ng-model="profile.person.area", required)
+          .form-group
+            label.control-label Type of Play
+            input.form-control(type="text", placeholder="Match play, hitting, or both", ng-model="profile.person.play", required)
+          .form-group
+            label.control-label Photo URL
+            input.form-control(type="url", placeholder="http://google.com/img.jpg", ng-model="profile.person.photo", required)
+      .modal-footer
+        button.btn.btn-danger(ng-click="profile.editUser()") Save
+        button.btn.btn-default(data-dismiss="modal") Cancel

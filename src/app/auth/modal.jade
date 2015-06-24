@@ -20,6 +20,12 @@
             label.control-label Best Time to Play
             input.form-control(type="text", placeholder="after 5PM", ng-model="auth.person.time", required)
           .form-group
+            label.control-label Court Preference
+            input.form-control(type="text", placeholder="Green Hills area", ng-model="auth.person.area", required)
+          .form-group
+            label.control-label Type of Play
+            input.form-control(type="text", placeholder="Match play, hitting, or both", ng-model="auth.person.play", required)
+          .form-group
             label.control-label Photo URL
             input.form-control(type="url", placeholder="http://google.com/img.jpg", ng-model="auth.person.photo", required)
           .form-group
