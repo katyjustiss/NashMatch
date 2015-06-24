@@ -23,7 +23,16 @@ angular
           .get(`${FIRE_URL}/profile/${uid}.json`)
           .success(cb)
       },
-
+      addPlayer(uid, data, cb) {
+        $http
+          .post(`${FIRE_URL}/players/${uid}.json`, JSON.stringify(data))
+          .success(cb)
+      },
+      getPlayers(uid, cb) {
+        $http
+          .get(`${FIRE_URL}/players/${uid}.json`)
+          .success(cb);
+      }
 
     }//end return
 

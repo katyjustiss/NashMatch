@@ -1,0 +1,13 @@
+.profile
+  .profile-main
+    img.picture(ng-src="{{player.person.photo}}")
+    button.add.btn.btn-lg.btn-info(ng-click="player.savePlayer()") Add Player!
+  .info
+    h1 {{player.person.name}}
+    p Best time to play: {{player.person.time}}
+    p NTRP rating: {{player.person.rating}}
+    p Best time: {{player.person.time}}
+    p Area Preference: {{player.person.area}}
+    p Type of play: {{player.person.play}}
+
+
