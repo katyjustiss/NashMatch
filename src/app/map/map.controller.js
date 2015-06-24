@@ -26,6 +26,8 @@ angular
       };
       $scope.options = { scrollwheel: false };
 
+      $scope.selected = {show: false};
+
       $scope.tennisMarkers = [];
 
 
@@ -46,10 +48,24 @@ angular
 
             var marker = {
               id: i,
-              coords: {
-                latitude:  36.273154,   //entry.coords.latitude,
-                longitude: -86.817074   //entry.coords.longitude
-              }
+              latitude: entry.latitude,
+              longitude: entry.longitude,
+              name: entry.park_name,
+              lights: entry.lights,
+              show: false
+            }; //used self in the directive because have lat and long directly in obj.
+
+            //Adding windows on click
+            marker.onClick = function() {
+              $scope.selected.show = false;
+              $scope.selected = marker; //working
+              $scope.selected.show = !$scope.selected.show;
+              $scope.$apply();
+            };
+
+            marker.closeClick = function() {
+              $scope.selected.show = false;
+              $scope.$apply();
             };
 
             markers.push(marker) //an array with all the marker objs
@@ -57,9 +73,8 @@ angular
             })
 
          $scope.tennisMarkers = markers;
-         // console.log($scope.tennisMarkers)
 
-      })
+       })
 
 
      }); //ending Google maps obj

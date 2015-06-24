@@ -1,16 +1,17 @@
 .jumbotron.center-content
   h1 Possible Opponents
 
-  a(href='#/matches')
-    h3 My Matches
+  .search
+    label Search for opponents
+    input(placeholder="Enter search term", ng-model="query")
 
 .all-members
-  h2 All Members
-  .playerContainer
-    .newPlayer(ng-repeat="player in player.people")
-      a(href="#/people/{{id}}")
+  .player_container
+    .new_player(ng-repeat="player in player.people")
         img.picture.thumbnail(ng-src="{{player.photo}}")
-        h5 {{player.name}}
-        p {{player.rating}}
-        p {{player.time}}
+        p Name: {{player.name}}
+        p NTRP rating: {{player.rating}}
+        p Best time: {{player.time}}
+
+
 

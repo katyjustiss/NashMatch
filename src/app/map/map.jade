@@ -1,8 +1,13 @@
-.landing
+.landing.jumbotron.center-content
   h1 Nashville Tennis Courts
+.map_container
   .map#map-canvas(ng-controller="MapCtrl")
     ui-gmap-google-map(center="map.center" options="options" zoom="map.zoom" fit="true")
-      ui-gmap-markers(models="tennisMarkers" idkey="id" coords="'self'" icon="'icon'")
+      ui-gmap-markers(models="tennisMarkers" idkey="id" coords="'self'" icon="'icon'" click="onClick()")
+        ui-gmap-window(show="selected.show" coords="selected" closeClick='closeClick()')
+          .popup_window
+            h4 {{selected.name}}
+            p Court lights: {{selected.lights}}
 
 
 

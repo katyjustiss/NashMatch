@@ -1,7 +1,7 @@
 angular
   .module('NashMatch')
 
-  .controller('PlayerCtrl', function($rootscope, Profile, FIRE_URL) {
+  .controller('PlayerCtrl', function(Profile, FIRE_URL) {
     var main = this;
 
     Profile.allPlayers(function(people){
