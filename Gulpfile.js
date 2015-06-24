@@ -143,9 +143,9 @@ gulp.task('serve', function () {
         baseDir: "public/"
       }
     });
-  gulp.watch(['src/**/*.jade'], ['jade:dev']).on('change', browserSync.reload)
-  gulp.watch(['src/**/*.scss'], ['sass:dev']).on('change', browserSync.reload)
-  gulp.watch(['src/**/*.js'], ['js:dev']).on('change', browserSync.reload)
+  gulp.watch(['src/**/*.jade', 'src/**/**/*.jade'], ['jade:dev']).on('change', browserSync.reload)
+  gulp.watch(['src/**/*.scss', 'src/**/**/*.scss'], ['sass:dev']).on('change', browserSync.reload)
+  gulp.watch(['src/**/*.js', 'src/**/**/*.js'], ['js:dev']).on('change', browserSync.reload)
 });
 
 gulp.task('default', function() {});
