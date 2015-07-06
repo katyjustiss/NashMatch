@@ -1,0 +1,16 @@
+.modal.fade#modalreset
+  .modal-dialog
+    .modal-content
+      .modal-header
+        button.close(data-dismiss="modal")
+          span &times;
+        h2 Password Reset
+        p Enter your email address below. Wait for an email with further instructions.
+      .modal-body
+        form(name="resetForm")
+           .form-group
+            label.control-label Email
+            input.form-control(type="email", placeholder="andre@agassi.com", ng-model="auth.reset.email", required)
+      .modal-footer
+        button.btn.btn-danger(ng-click="auth.resetUser()") Submit
+        button.btn.btn-default(data-dismiss="modal") Cancel

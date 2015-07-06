@@ -49,6 +49,12 @@ gulp.task('clean', function () {
 //   .pipe(gulp.dest('./public/'))
 // });
 
+gulp.task('copy', function () {
+  return gulp
+    .src(['src/**/*.jpg', 'src/**/*.jpeg', 'src/**/*.png', 'src/**/*.gif', 'src/**/*.mp4'])
+    .pipe(gulp.dest('public'))
+});
+
 /////////////DEPLOY/////////////////
 // gulp.task('deploy', function () {
 //   return gulp.src("./public/**/*")
@@ -111,9 +117,6 @@ gulp.task('build:dev', ['clean'], function(callback) {
         'sass:dev',
         'js:dev',
         'bower'
-      ],
-      [
-        'serve'
       ],
         callback);
 });

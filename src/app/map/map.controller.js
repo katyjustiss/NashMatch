@@ -24,7 +24,10 @@ angular
           },
           zoom: 11
       };
-      $scope.options = { scrollwheel: false };
+      $scope.options = {
+        scrollwheel: false,
+        styles: styleArray
+      };
 
       $scope.selected = {show: false};
 
@@ -76,6 +79,35 @@ angular
 
        })
 
+        var styleArray = [
+          {
+            stylers: [
+              { hue: "#00ff6f" },
+              { saturation: -50 }
+            ]
+          }, {
+            featureType: "road",
+            elementType: "geometry",
+            stylers: [
+              { lightness: 100 },
+              { visibility: "simplified" }
+            ]
+          }, {
+            featureType: "transit",
+            elementType: "geometry",
+            stylers: [
+              { hue: "#ff6600" },
+              { saturation: +80}
+            ]
+          }, {
+            featureType: "transit",
+            elementType: "labels",
+            stylers: [
+              { hue: "#ff0066" },
+              { saturation: +80}
+            ]
+          }
+        ]
 
      }); //ending Google maps obj
   }); //ending controller

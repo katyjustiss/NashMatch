@@ -12,9 +12,9 @@ html(lang="en", ng-app="NashMatch")
     link(href='http://fonts.googleapis.com/css?family=Domine', rel='stylesheet', type='text/css')
   body
     .container
-      nav.navbar
-        ul.nav.navbar-nav
-          a.navbar-brand(href='/#/') NashMatch
+      nav.navbar.navbar-fixed-top
+        a.navbar-brand(href='/#/') NashMatch
+        ul.nav.navbar-nav.navbar-right
           li: a(href='/#/players') Players
           li(ng-show="auth"): a(href='/#/profile') Profile
           li(ng-hide="auth"): a(href='/#/login') Login

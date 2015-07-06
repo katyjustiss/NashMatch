@@ -28,6 +28,11 @@ angular
           .post(`${FIRE_URL}/players/${uid}.json`, JSON.stringify(data))
           .success(cb)
       },
+      getComments(uid, cb) {
+        $http
+          .get(`${FIRE_URL}/comments/${uid}.json`)
+          .success(cb)
+      },
       getPlayers(uid, cb) {
         $http
           .get(`${FIRE_URL}/players/${uid}.json`)

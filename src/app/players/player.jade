@@ -1,13 +1,30 @@
-.profile
-  .profile-main
-    img.picture(ng-src="{{player.person.photo}}")
-    button.add.btn.btn-lg.btn-info(ng-click="player.savePlayer()") Add Player!
-  .info
-    h1 {{player.person.name}}
-    p Best time to play: {{player.person.time}}
-    p NTRP rating: {{player.person.rating}}
-    p Best time: {{player.person.time}}
-    p Area Preference: {{player.person.area}}
-    p Type of play: {{player.person.play}}
+.profile-container
+  .profile
+    .profile-main
+      img.picture(ng-src="{{player.person.photo}}")
+      button.add.btn.btn-lg.btn-danger(ng-click="player.savePlayer()") Add Player!
+    .info
+      h1 {{player.person.name}}
+      p #[u NTRP rating:] {{player.person.rating}}
+      p #[u Best time:] {{player.person.time}}
+      p #[u Area Preference:] {{player.person.area}}
+      p #[u Type of play:] {{player.person.play}}
+
+  .comments
+    form
+      .form-group
+        label.control-label Your Name:
+        input.form-control(type="name", ng-model="player.comment.name", required)
+      .form-group
+        label.control-label Add message for {{player.person.name}}:
+        textarea.form-control(type="comment", placeholder="Can you play on Sunday?", ng-model="player.comment.comment", required)
+    button.btn.btn-danger(ng-click="player.addComments()") Add Comment
+
+    .main-comments
+      h3 Messages
+      .messages(ng-repeat="comment in player.comments")
+        p #[strong{{comment.name}}]: {{comment.comment}}
+
+
 
 

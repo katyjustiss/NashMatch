@@ -7,12 +7,12 @@
         h2 Create Profile
       .modal-body
         form(name="profileForm")
-           .form-group
+           .form-group(ng-class="{'has-success': profileForm.e.$dirty && auth.hidden.email.length > 1, 'has-error': profileForm.e.$dirty && !auth.hidden.email}")
             label.control-label Email
-            input.form-control(type="email", placeholder="andre@agassi.com", ng-model="auth.hidden.email", required)
+            input.form-control(name="e", type="email", placeholder="andre@agassi.com", ng-model="auth.hidden.email", required)
           .form-group
             label.control-label Name
-            input.form-control(type="text", placeholder="Andre", ng-model="auth.person.name", required)
+            input.form-control.text-capitalize(type="text", placeholder="Andre", ng-model="auth.person.name", required)
           .form-group
             label.control-label National Tennis Rating Level
             input.form-control(name="a", type="text", placeholder="3.5", ng-model="auth.person.rating", required)
@@ -32,5 +32,5 @@
             label.control-label Password
             input.form-control(type="password", placeholder="Enter password", ng-model="auth.hidden.password", required)
       .modal-footer
-        button.btn.btn-danger(ng-click="auth.createUser()") Save
+        button.btn.btn-danger(ng-click="profileForm.$valid && auth.createUser()", ng-disabled="profileForm.$invalid") Save
         button.btn.btn-default(data-dismiss="modal") Cancel

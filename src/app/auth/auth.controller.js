@@ -36,6 +36,43 @@ angular
       }); //end of fb createUser
     }; //end of createUser function
 
+    main.resetUser = function() {
+      fb.resetPassword({
+      email: email
+    }, function(err){
+      if (err) {
+          alert(err.toString());
+      } else {
+        alert('Check your email!');
+      }
+    });
+    }
+
+    main.resetModal = function(){
+      $('#modalreset').modal('show');
+      $('#modalreset').on('hidden.bs.modal', function (e) {
+        $location.path('/login');
+        $scope.$apply();
+      });
+    } //end of ModalLoad
+
+
+    main.resetPass = function() {
+      fb.changePassword({
+        email: main.temp.email,
+        oldPassword: main.temp.oldPassword,
+        newPassword: main.temp.newPassword
+      }, function(err){
+        if(err){
+          alert('Error: ' + err);
+        }else{
+          main.login(main.temp.email, main.temp.newPassword)
+          //may need to add something for authentication. test.
+        }
+      })
+    }
+
+
      main.onModalLoad = function(){
       $('#modal').modal('show');
       $('#modal').on('hidden.bs.modal', function (e) {

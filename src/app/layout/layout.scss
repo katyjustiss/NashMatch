@@ -1,9 +1,38 @@
 body {
   font-family: 'Domine', serif, Arial;
+  background: white url("http://images.alphacoders.com/234/234641.jpg") no-repeat;
+  background-size: cover;
+  position: relative;
+  height: 100%;
+}
+
+.navbar {
+  background-color: rgb(255, 255, 255);
+  .navbar-brand {
+    margin-left: 8%;
+  }
+  ul {
+    margin-right: 8%;
+  }
 }
 
 h1 {
   font-family: 'Montserrat', serif, Arial;
+}
+
+.landing {
+  color: white;
+  text-shadow: 1px 1px 2px rgba(150, 150, 150, 0.6);
+  font-size: 2.5em;
+  margin-top: 10%;
+  margin-bottom: 4%;
+  h1 {
+    font-size: 1.5em;
+  }
+}
+
+.search-label {
+  color: white
 }
 
 .center-content {
@@ -24,17 +53,33 @@ h1 {
 .new_player {
   box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.32);
   padding: 2%;
+  background: rgba(255,255,255, 0.9);
+  margin: 1%;
   .picture {
   width: auto;
   height: 100px;
   }
 }
 
-.profile {
+.comments {
+  width: 35%;
+  margin: 8% 2% 2%;
+  label {
+    color: white;
+  }
+}
+
+.profile-container, .profile-page {
+  display: flex;
+  flex-direction: row;
+  flex-flow: wrap;
+}
+
+.profile, .main-comments, .added-players {
   width: 45%;
-  margin: 0 auto 2%;
-  background: rgba(238,238,238, 0.5);
-  box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.32);
+  margin: 8% 2% 2%;
+  background: rgba(255,255,255, 0.9);
+  box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.40);
   padding: 4% 3%;
   border-radius: 15px;
   display: flex;
@@ -54,5 +99,31 @@ h1 {
   .info {
     padding-left: 5%;
   }
-
 }
+
+.main-comments {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  h3 {
+    border-bottom: 1px black solid;
+  }
+}
+
+.added-players {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  .player-snapshot {
+    display: flex;
+    flex-direction: row;
+    flex-flow: wrap;
+  }
+  .small-picture {
+    width: auto;
+    height: 75px;
+    margin-bottom: 5%;
+  }
+}
+
+
