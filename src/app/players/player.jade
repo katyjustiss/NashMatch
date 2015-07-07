@@ -13,17 +13,15 @@
   .comments
     form
       .form-group
-        label.control-label Your Name:
-        input.form-control(type="name", ng-model="player.comment.name", required)
-      .form-group
         label.control-label Add message for {{player.person.name}}:
         textarea.form-control(type="comment", placeholder="Can you play on Sunday?", ng-model="player.comment.comment", required)
     button.btn.btn-danger(ng-click="player.addComments()") Add Comment
 
     .main-comments
       h3 Messages
-      .messages(ng-repeat="comment in player.comments")
-        p #[strong{{comment.name}}]: {{comment.comment}}
+      .messages(ng-repeat="comment in player.comments track by $index")
+        p.timestamp #[small{{comment.timestamp | date:'medium'}}]
+        p.each-comment #[strong{{comment.name | uppercase}}]: {{comment.comment.comment}}
 
 
 

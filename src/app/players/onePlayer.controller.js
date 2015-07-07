@@ -5,6 +5,7 @@ angular
     main.id = $routeParams.id; //storing the id
     var fb = new Firebase(FIRE_URL); //creating new firebase instance to access authData
     var userData = fb.getAuth();
+    main.userData = userData.uid;
 
     //access one person's data for their profile
     People.getOne(main.id, function(data){
@@ -35,24 +36,37 @@ angular
       //add comment to their firebase info?
       //main.id is the simple login of the page
       //main.comment links to the textarea content
+          //your info
+      People.getOne(main.userData, function(info){
+        main.info = info;
 
       var addingComments = fb.child(`comments/${main.id}`)
-      addingComments.push(main.comment, main.name)
+      .push({
+        comment: main.comment,
+        name: main.info.name,
+        timestamp: Firebase.ServerValue.TIMESTAMP
+      })
       //unfortunately repeated the function below. Want it to run aften adding on on page load.
       People.getComments(main.id, function(res){ //comment is obj with 2 objs
         main.commentObj = res;
+        console.log(res)
         main.comments = [];
         for (var message in main.commentObj) {
+
           main.comments.push(main.commentObj[message]); //the individual comment objs with name
         }
       })
+
+      }) //end of People.getOne
     } //end addComments
 
       //adding comments to the div
       People.getComments(main.id, function(res){ //comment is obj with 2 objs
         main.commentObj = res;
+        console.log(res)
         main.comments = [];
         for (var message in main.commentObj) {
+
           main.comments.push(main.commentObj[message]); //the individual comment objs with name
         }
       })

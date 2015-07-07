@@ -56,10 +56,11 @@ gulp.task('copy', function () {
 });
 
 /////////////DEPLOY/////////////////
-// gulp.task('deploy', function () {
-//   return gulp.src("./public/**/*")
-//     .pipe(deploy())
-// });
+gulp.task('deploy', function () {
+  return gulp
+    .src("public/**/**")
+    .pipe(deploy())
+});
 
 ///////////////JADE////////////////
 gulp.task('jade:dev', function () {

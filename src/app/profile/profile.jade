@@ -12,8 +12,9 @@
 
   .added-players
     h2 Added Players
-    .player-snapshot(ng-repeat="(id, person) in profile.playerProfile")
-      a(href="#/people/{{person._id}}")
-        img.small-picture(ng-src="{{person.photo}}")
+    .player-container
+      .player-snapshot(ng-repeat="(id, person) in profile.playerProfile track by $index")
+        a(href="#/people/{{profile.playerID[$index]}}")
+          img.small-picture(ng-src="{{person.photo}}")
 
 div(ng-include="'app/profile/editmodal.html'")

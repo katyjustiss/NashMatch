@@ -76,7 +76,7 @@ h1 {
 }
 
 .profile, .main-comments, .added-players {
-  width: 45%;
+  width: 48%;
   margin: 8% 2% 2%;
   background: rgba(255,255,255, 0.9);
   box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.40);
@@ -111,18 +111,24 @@ h1 {
 }
 
 .added-players {
-  width: 30%;
   display: flex;
   flex-direction: column;
-  .player-snapshot {
+  width: 35%;
+  .player-container {
     display: flex;
     flex-direction: row;
-    flex-flow: wrap;
   }
   .small-picture {
     width: auto;
     height: 75px;
-    margin-bottom: 5%;
+    padding: 4%;
+  }
+}
+
+.messages {
+  line-height: .75;
+  .timestamp {
+    opacity: 0.5;
   }
 }
 

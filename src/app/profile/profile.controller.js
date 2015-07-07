@@ -7,6 +7,7 @@ angular
     var userData = fb.getAuth();
     main.id = userData.uid;
     main.playerProfile = [];
+    main.playerID = [];
 
     People.getProfile($rootScope.auth.uid, function(person) {
       main.person = person;
@@ -30,12 +31,10 @@ angular
     //working on creating a link back to their profile pages.
     People.getPlayers(userData.uid, function(res) {
       main.playerObj = res; //accessing the simplelogin friend info
-      console.log(main.playerObj)
       for (var player in main.playerObj) {
+        main.playerID.push(main.playerObj[player])
         People.getOne(main.playerObj[player], function(saved) {
-          console.log(main.playerObj[player])
           main.playerProfile.push(saved)
-          console.log(main.playerProfile)
         })
       }
     })
