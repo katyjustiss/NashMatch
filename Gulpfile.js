@@ -140,13 +140,17 @@ gulp.task('build:prod', ['clean'], function(callback) {
         callback);
 });
 
-//SERVER AND WATCH
-gulp.task('serve', function () {
+gulp.task('browser-sync', function () {
   browserSync.init({
       server: {
         baseDir: "public/"
       }
-    });
+  });
+});
+
+//SERVER AND WATCH
+gulp.task('serve', ['build'], function () {
+  gulp.start('browser-sync');
   gulp.watch(['src/**/*.jade', 'src/**/**/*.jade'], ['jade:dev']).on('change', browserSync.reload)
   gulp.watch(['src/**/*.scss', 'src/**/**/*.scss'], ['sass:dev']).on('change', browserSync.reload)
   gulp.watch(['src/**/*.js', 'src/**/**/*.js'], ['js:dev']).on('change', browserSync.reload)
