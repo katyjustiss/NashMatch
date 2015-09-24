@@ -13,13 +13,21 @@ html(lang="en", ng-app="NashMatch")
     link(href='http://fonts.googleapis.com/css?family=Domine', rel='stylesheet', type='text/css')
   body
     .container
-      nav.navbar.navbar-fixed-top
-        a.navbar-brand(href='/#/') NashMatch
-        ul.nav.navbar-nav.navbar-right
-          li: a(href='/#/players') Players
-          li(ng-show="auth"): a(href='/#/profile') Profile
-          li(ng-hide="auth"): a(href='/#/login') Login
-          li(ng-show="auth"): a(href='/#/logout') Logout
+      nav.navbar.navbar-default.navbar-fixed-top
+        .container
+          .navbar-header
+            button(type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1")
+              span(class="sr-only") Toggle navigation
+              span(class="icon-bar")
+              span(class="icon-bar")
+              span(class="icon-bar")
+            a.navbar-brand(href='/#/') NashMatch
+          div(class="collapse navbar-collapse" id="bs-example-navbar-collapse-1")
+            ul.nav.navbar-nav.navbar-right
+              li: a(href='/#/players') Players
+              li(ng-show="auth"): a(href='/#/profile') Profile
+              li(ng-hide="auth"): a(href='/#/login') Login
+              li(ng-show="auth"): a(href='/#/logout') Logout
     .app(ng-view)
 
   script(src="lib/build.js")

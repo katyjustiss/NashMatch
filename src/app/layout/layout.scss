@@ -3,7 +3,7 @@ body {
   background: white url("http://images.alphacoders.com/234/234641.jpg") no-repeat;
   background-size: cover;
   position: relative;
-  height: 100%;
+  margin-bottom: 70%;
 }
 
 .navbar {
@@ -72,7 +72,7 @@ h1 {
 .profile-container, .profile-page {
   display: flex;
   flex-direction: row;
-  flex-flow: wrap;
+  flex-wrap: wrap;
 }
 
 .profile, .main-comments, .added-players {
